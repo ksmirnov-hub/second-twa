@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="app">
        <div class="center-block">
-          <div>
+          <div class="img">
             <img width='211px' height='202px' src={Logo} alt='' />
           </div>
           <div class="title">
