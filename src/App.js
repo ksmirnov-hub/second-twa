@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 
 import Logo from './images/logoIcon.png';
