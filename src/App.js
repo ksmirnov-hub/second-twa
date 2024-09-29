@@ -6,17 +6,17 @@ const App = () => {
 
   return (
     <div className="app">
-       <div class="center-block">
-          <div class="img">
+       <div className="center-block">
+          <div className="img">
             <img width='211px' height='202px' src={Logo} alt='' />
           </div>
-          <div class="title">
+          <div className="title">
             Life Coin
           </div>
-          <div class="description">
+          <div className="description">
             LIFE - это будущее, где время самая ценная валюта
           </div>
-          <div class="controls">
+          <div className="controls">
             <button>
               Войти
             </button>
