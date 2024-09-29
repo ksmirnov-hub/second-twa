@@ -1,90 +1,80 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
+  background-color: rgba(175, 244, 215, 1);
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 }
 
-.App {
-  text-align: center;
-  position: relative;
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .center-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      font-family: Poppins;
+      font-size: 52.14px;
+      font-weight: 600;
+      line-height: 57.36px;
+      text-align: center;
+      margin-top: 42px;
+    }
+
+    .description {
+      font-family: League Spartan;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20.8px;
+      text-align: center;
+      width: 236px;
+      height: 42px;
+      top: 535px;
+      left: 97px;
+      opacity: 0px;
+      margin-top: 34px;  
+    }
+
+    .controls {
+      width: 207px;
+      height: 45px;
+      top: 612px;
+      left: 112px;
+      margin-top: 35px;
+      font-family: Poppins !important;
+      font-size: 20px;
+      font-weight: 600;
+      border: none;
+
+      & > button {
+        width: 207px;
+        height: 45px;
+        gap: 0px;
+        border-radius: 5px;
+        line-height: 22px;
+        text-align: center;
+        font-size: 20px;
+        border: none;
+        cursor:pointer;
+      }
+    }
+
+  }
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 5px;
   color: #333;
-}
-
-.deck {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.card {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card.flipped {
-  transform: rotateY(180deg);
-}
-
-.card.show {
-  background-color: var(--card-color);
-}
-
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  font-size: 1.2rem;
-}
-
-.game-over {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.game-over h2 {
-  margin: 0 0 10px 0;
-}
-
-.game-over button {
-  background-color: #ff6347;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.game-over button:hover {
-  background-color: #ff4500;
 }
 
 .overlay {
