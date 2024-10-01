@@ -1,28 +1,21 @@
-import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import './App.css';
+import AppLayout from 'layouts/AppLayout';
 
-import Logo from './images/logoIcon.png';
+import Start from 'pages/start/start';
+import Home from 'pages/home';
+import Account from 'pages/account';
+
 const App = () => {
-
   return (
-    <div className="app">
-       <div className="center-block">
-          <div className="img">
-            <img width='211px' height='202px' src={Logo} alt='' />
-          </div>
-          <div className="title">
-            Life Coin
-          </div>
-          <div className="description">
-            LIFE - это будущее, где время самая ценная валюта
-          </div>
-          <div className="controls">
-            <button>
-              Войти
-            </button>
-          </div>
-       </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<AppLayout />}>
+        <Route index element={<Start />} />
+        <Route  path="home" element={<Home />} />
+        <Route  path="account" element={<Account />} />
+      </Route>
+    </Routes>
   );
 };
 
