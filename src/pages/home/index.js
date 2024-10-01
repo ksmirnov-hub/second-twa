@@ -3,13 +3,13 @@ import { useNavigate  } from 'react-router-dom';
 
 import './home.css';
 
-import Logo from 'images/notificationsIcon';
-import TelegramIcon from 'images/tg.png';
-import InstagramIcon from 'images/insta.png';
-import Operations from 'images/operations.png';
-import Location from 'images/where.png';
-import List from 'images/list.png';
-import Person from 'images/person.png';
+import Logo from '../../images/notificationsIcon';
+import TelegramIcon from '../../images/tg.png';
+import InstagramIcon from '../../images/insta.png';
+import Operations from '../../images/operations.png';
+import Location from '../../images/where.png';
+import List from '../../images/list.png';
+import Person from '../../images/person.png';
 
 const Home = () => {
   const navigate = useNavigate();

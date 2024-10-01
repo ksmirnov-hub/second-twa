@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import './account.css';
 
-import Edit from 'images/edit.png';
-import ArrowBack from 'images/arrow_back.png';
+import Edit from '../../images/edit.png';
+import ArrowBack from '../../images/arrow_back.png';
 
 const Home = () => {
   const navigate = useNavigate();
