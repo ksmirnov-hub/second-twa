@@ -16,7 +16,7 @@ const Home = () => {
                     className='button-flat'
                     onClick={() => {navigate('/home')}}  
                 >
-                    <img src={ArrowBack} />
+                    <img src={ArrowBack} alt="" />
                 </button>
             </div>
             <div className='title'>Аккаунт</div>
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
         <div className='photo-block'>
             <div className='edit'>
-                <img src={Edit} />
+                <img src={Edit} alt="" />
                 <div>Редактировать</div>
             </div>
         </div>

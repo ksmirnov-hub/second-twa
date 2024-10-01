@@ -21,14 +21,14 @@ const Home = () => {
         </div>
         <div className="block">
             <div className="row">
-                <img src={TelegramIcon} />
+                <img src={TelegramIcon} alt="" />
                 <div className='name'>Телеграм</div>
             </div>
             <div className='subscribe'>Подписаться</div>
         </div>
         <div className="block">
             <div className="row">
-                <img src={InstagramIcon} />
+                <img src={InstagramIcon} alt="" />
                 <div className='name'>Инста</div>
             </div>
             <div className='subscribe'>
@@ -55,16 +55,16 @@ const Home = () => {
         <div className="block no-border">Выйти</div>
         <div className="down">
             <div>
-                <img src={Operations} />
+                <img src={Operations} alt="" />
             </div>
             <div>
-                <img src={Location} />
+                <img src={Location} alt="" />
             </div>
             <div>
-                <img src={List} />
+                <img src={List} alt="" />
             </div>
             <div>
-                <img src={Person} />
+                <img src={Person} alt="" />
             </div>
         </div>
     </div>
