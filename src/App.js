@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import AppLayout from 'layouts/AppLayout';
+import AppLayout from './layouts/AppLayout';
 
 const App = () => {
   return (
