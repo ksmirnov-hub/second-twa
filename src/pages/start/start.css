@@ -2,6 +2,7 @@
 .start {
     display: flex;
     align-items: center;
+    row-gap: 60px;
     flex-direction: column;
     height: 100%;
     background-color: rgba(222, 255, 236, 1);
@@ -9,9 +10,9 @@
     .upper-block {
       width: 253px;
       display: flex;
-      align-items: center;
+      align-items: end;
       justify-content: space-around;
-      height: 270px;
+      min-height: 210px;
       font-family: 'SF Pro Display';
       font-size: 24px;
       font-weight: 700;
@@ -20,10 +21,10 @@
     }
 
     .lower-block {
+      padding-top: 81px;
       height: 100%;
       width: 100%;
       display: flex;
-      justify-content: center;
       align-items: end;
       flex-direction: column;
       background-color: rgba(0, 184, 88, 1);
