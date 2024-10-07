@@ -1,33 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 
 import './start.css';
 
-import Logo from '../../images/logoIcon.png';
+import EnterFirst from '../../images/enter-first.png';
+import EnterSecond from '../../images/enter-second.png';
 
 const Start = () => {
   const navigate = useNavigate();
+  const [step, setStep] = useState(1);
+  console.log('step body', step)
 
   return (
-    <div className="app">
-       <div className="center-block">
-          <div className="img">
-            <img width='211px' height='202px' src={Logo} alt='' />
-          </div>
-          <div className="title">
-            Life Coin
-          </div>
-          <div className="description">
-            LIFE - это будущее, где время самая ценная валюта
-          </div>
-          <div className="controls">
-            <button
-                onClick={() => {navigate('/home')}}  
-            >
-              Войти
-            </button>
-          </div>
-       </div>
+    <div className="start">
+      <div className="upper-block">
+        {
+          step === 1
+            ? 'Добро пожаловать в life Coin'
+            : 'Life - это сообщество людей, которые ценят время'
+        }
+      </div>
+      <div className="lower-block">
+        <div className="img">
+          <img width='211px' height='202px' src={step === 1 ? EnterFirst : EnterSecond} alt='' />
+        </div>
+        <div className="controls">
+          <button
+              onClick={() => setStep((step) => {
+                if (step + 1 === 3) {
+                  navigate('/home');
+                }
+                return step + 1;
+              })}  
+          >
+            Дальше
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

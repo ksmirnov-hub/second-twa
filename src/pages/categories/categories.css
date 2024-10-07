@@ -39,7 +39,7 @@
     background: rgba(0, 184, 88, 1);
 }
 
-.links {
+.categories {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
@@ -51,7 +51,7 @@
     background-color: transparent;
 }
 
-.block {
+.category {
     color: rgba(0, 0, 0, 1);
     display: flex;
     align-items: center;
@@ -70,6 +70,27 @@
     font-weight: 400;
     line-height: 25px;
     text-align: left;
+
+    .category-photo {
+        display: flex;
+        align-items: center;
+    }
+
+    .category-progress {
+        flex-grow: 1;
+        margin-left: 8px;
+
+        .base {
+            height: 4px;
+            background: rgba(137, 137, 137, 1);
+        }
+        .progress {
+            position: relative;
+            top: -4px;
+            height: 4px;
+            background: rgba(0, 184, 88, 1);
+        }
+    }
 }
 
 .scores {

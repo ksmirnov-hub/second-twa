@@ -1,0 +1,20 @@
+.calendar {
+    .datepicker-strip {
+        .datepicker-month-label {
+            display: none;
+        }
+        .datepicker {
+            .button-previous, button-next {
+                display: none;
+            }
+            .wrapper {
+                position: absolute;
+                .scroll-head {
+                    position: relative;
+                    top: -20px;
+                    left: 80%;
+                }
+            }
+        }
+    }
+}

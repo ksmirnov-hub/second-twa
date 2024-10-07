@@ -1,0 +1,63 @@
+
+.hello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .center-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: rgba(254, 254, 254, 1);
+
+      .title {
+        font-family: 'SF Pro Display';
+        font-size: 52.14px;
+        font-weight: 600;
+        line-height: 57.36px;
+        text-align: center;
+        margin-top: 42px;
+      }
+  
+      .description {
+        font-family: League Spartan;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20.8px;
+        text-align: center;
+        width: 236px;
+        height: 42px;
+        top: 535px;
+        left: 97px;
+        margin-top: 34px;  
+      }
+  
+    }
+  
+  
+  }
+  
+  
+  .img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
