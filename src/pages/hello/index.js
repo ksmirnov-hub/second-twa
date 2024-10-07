@@ -12,7 +12,7 @@ const Home = () => {
           <div className="img">
             <img width='211px' height='202px' src={Logo} alt='' />
           </div>
-          <div className="title">
+          <div className="hello-title">
             Life Coin
           </div>
           <div className="description">

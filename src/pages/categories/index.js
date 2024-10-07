@@ -35,7 +35,7 @@ const Categories = () => {
   const elementWidth = 50;
   return (
     <div className="home">
-        <div className='header-home'>
+        <div className='header-categories'>
             <div className='arrow'>
                 <button
                     className='button-flat'

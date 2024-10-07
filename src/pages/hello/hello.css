@@ -11,15 +11,6 @@
       align-items: center;
       flex-direction: column;
       color: rgba(254, 254, 254, 1);
-
-      .title {
-        font-family: 'SF Pro Display';
-        font-size: 52.14px;
-        font-weight: 600;
-        line-height: 57.36px;
-        text-align: center;
-        margin-top: 42px;
-      }
   
       .description {
         font-family: League Spartan;
@@ -39,7 +30,16 @@
   
   }
   
-  
+  .hello-title {
+    font-family: 'SF Pro Display';
+    font-size: 52.14px;
+    font-weight: 600;
+    line-height: 57.36px;
+    text-align: center;
+    margin-top: 42px;
+    margin-left: 0;
+  }
+
   .img {
     width: 100%;
     display: flex;

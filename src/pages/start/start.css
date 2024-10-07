@@ -31,7 +31,7 @@
     background-color: rgba(0, 184, 88, 1);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
+    min-height: 574px;
   }
   
   .title-start {
