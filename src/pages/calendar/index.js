@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import './calendar.css';
 
 import ArrowBack from '../../images/arrow_back.png';
-import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
-import 'react-horizontal-strip-datepicker/dist/ReactHorizontalDatePicker.css';
+// import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
+// import 'react-horizontal-strip-datepicker/dist/ReactHorizontalDatePicker.css';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,6 +13,8 @@ const Home = () => {
   const onSelectedDay = (d) => {
     console.log(d)
   }
+
+  const ReactHorizontalDatePicker = () => {}
 
   return (
     <div className="account">
