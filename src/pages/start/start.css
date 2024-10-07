@@ -5,60 +5,57 @@
     row-gap: 60px;
     flex-direction: column;
     height: 100%;
-    background-color: rgba(222, 255, 236, 1);
-
-    .upper-block {
-      width: 253px;
-      display: flex;
-      align-items: end;
-      justify-content: space-around;
-      min-height: 210px;
-      font-family: 'SF Pro Display';
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 25px;
-      text-align: center;
-    }
-
-    .lower-block {
-      padding-top: 81px;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: end;
-      flex-direction: column;
-      background-color: rgba(0, 184, 88, 1);
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-  
-      .title {
-        font-family: Poppins;
-        font-size: 52.14px;
-        font-weight: 600;
-        line-height: 57.36px;
-        text-align: center;
-        margin-top: 42px;
-      }
-  
-      .description {
-        font-family: League Spartan;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20.8px;
-        text-align: center;
-        width: 236px;
-        height: 42px;
-        top: 535px;
-        left: 97px;
-        margin-top: 34px;  
-      }
-  
-    }
-  
-  
+    background-color: rgba(222, 255, 236, 1);  
   }
   
+  .upper-block {
+    width: 253px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    min-height: 210px;
+    font-family: 'SF Pro Display';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+  }
+
+  .lower-block {
+    padding-top: 81px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    background-color: rgba(0, 184, 88, 1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+  }
   
+  .title-start {
+    font-family: Poppins;
+    font-size: 52.14px;
+    font-weight: 600;
+    line-height: 57.36px;
+    text-align: center;
+    margin-top: 42px;
+  }
+
+  .description {
+    font-family: League Spartan;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: center;
+    width: 236px;
+    height: 42px;
+    top: 535px;
+    left: 97px;
+    margin-top: 34px;  
+  }
+
   .img {
     width: 100%;
     display: flex;

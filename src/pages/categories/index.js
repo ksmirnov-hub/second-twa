@@ -27,7 +27,7 @@ import Charity from '../../images/categories/charity.png';
 import Usd from '../../images/usd.png';
 import Location from '../../images/note.png';
 import CategoriesActive from '../../images/categories-active.png';
-import ArrowBack from '../../images/arrow_back.png';
+import ArrowBack from '../../images/arrow-white.png';
 import Home from '../../images/home.png';
 
 const Categories = () => {

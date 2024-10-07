@@ -9,7 +9,7 @@ import Usd from '../../images/usd.png';
 import Location from '../../images/note.png';
 import List from '../../images/category.png';
 import HomeActive from '../../images/home-active.png';
-import ArrowBack from '../../images/arrow_back.png';
+import ArrowBack from '../../images/arrow-white.png';
 
 const Home = () => {
   const navigate = useNavigate();
