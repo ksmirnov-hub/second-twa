@@ -55,7 +55,12 @@ const Home = () => {
                 <img src={Usd} alt="" />
             </div>
             <div>
-                <img src={Location} alt="" />
+                <button
+                    className='button-flat'
+                    onClick={() => {navigate('/tasks')}}  
+                >
+                    <img src={Location} alt="" />
+                </button>
             </div>
             <div>
                 <button

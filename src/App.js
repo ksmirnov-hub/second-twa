@@ -8,6 +8,8 @@ import Hello from './pages/hello';
 import Account from './pages/account';
 import Calendar from './pages/calendar';
 import Categories from './pages/categories';
+import Tasks from './pages/tasks';
+import CurrentTask from './pages/currentTask';
 import { useState, useEffect } from 'react';
 
 const App = () => {
@@ -31,8 +33,10 @@ const App = () => {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={startPage} />
+        <Route path="tasks" element={<Tasks />} />
         <Route path="start" element={<Start />} />
         <Route path="hello" element={<Hello />} />
+        <Route path='task' element={<CurrentTask />} />
         <Route path="categories" element={<Categories />} />
         <Route  path="home" element={<Home />} />
         <Route  path="account" element={<Account />} />
