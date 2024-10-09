@@ -1,7 +1,5 @@
-.home {
+.current {
     width: 100%;
-    height: 100%;
-    background_: rgba(250, 255, 245, 1);
     background: rgba(249, 249, 249, 1);
 
 }
@@ -114,6 +112,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 276px;
+    column-gap: 12px;
 
     & > div > button {
         font-family: 'SF Pro Display';

@@ -13,7 +13,7 @@ const Tasks = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="home">
+    <div className="current">
         <div className='header-categories'>
             <div className='arrow'>
                 <button
