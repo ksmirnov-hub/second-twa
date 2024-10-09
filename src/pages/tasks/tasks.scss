@@ -1,0 +1,203 @@
+.home {
+    width: 100%;
+    height: 100%;
+    background_: rgba(250, 255, 245, 1);
+    background: rgba(249, 249, 249, 1);
+
+}
+
+.header {
+    height: 52px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: left;
+}
+
+.content {
+    background: rgba(249, 249, 249, 1);
+}
+
+.header-categories {
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    border: none;
+    height: 67px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    background: rgba(0, 184, 88, 1);
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 8px;
+}
+
+.photo-block button {
+    border: none;
+    background-color: transparent;
+}
+
+.task.active {
+    background: rgba(222, 255, 236, 1);
+
+    & > .task-name {
+
+        & > div:nth-child(1) {
+
+            &::before {
+                content: '';
+                display: block;
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                background: rgba(0, 184, 88, 1);
+            }
+        }
+    }
+}
+
+.task {
+    color: rgba(0, 0, 0, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 24px;
+    background: rgba(254, 254, 254, 1);
+    height: 61px;
+    padding: 18px 12px 18px 12px;
+    border-radius: 8px 0px 0px 0px;
+
+    font-family: 'SF Pro Display';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+
+    .task-photo {
+        display: flex;
+        align-items: center;
+    }
+
+    .task-name {
+        flex-grow: 1;
+        margin-left: 8px;
+        & > div:nth-child(1) {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            color: rgba(49, 55, 51, 1);
+            font-family: 'SF Pro Display';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 25px;
+
+            & > div:nth-child(1) {
+                white-space: nowrap;
+                max-width: 250px;
+                word-wrap: break-word;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+
+        & > .category-name {
+            color: rgba(0, 184, 88, 1);
+            font-family: 'SF Pro Display';
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+        }
+
+        & > .coins {
+            display: flex;
+            column-gap: 2px;
+            margin-top: 4px;
+            & > .coins-number {
+                font-family: 'SF Pro Display';
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14px;
+                color: rgba(137, 137, 137, 1);
+            }
+        }
+    }
+}
+
+.scores {
+    height: 50px;
+    padding: 16px 10px 16px 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'SF Pro Display';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    color: rgba(0, 184, 88, 1);
+    background: rgba(254, 254, 254, 1);
+}
+
+.block.no-border {
+    border: none;
+}
+
+.subscribe {
+    font-family: 'SF Pro Display';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+    text-align: left;
+    color: rgba(0, 184, 88, 1);
+}
+
+.button {
+    background-color: white;
+    border: 1px solid black;
+    width: 88px;
+    height: 28px;
+    top: 289px;
+    left: 15px;
+}
+
+.down {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    background: rgba(249, 249, 249, 1);
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    font-family: 'SF Pro Display';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+}
+
+.row {
+    column-gap: 9px;
+    display: flex;
+    justify-content: center;
+}
