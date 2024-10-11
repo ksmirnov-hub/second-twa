@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    background: rgba(0, 184, 88, 1);
 
     .center-block {
       display: flex;
