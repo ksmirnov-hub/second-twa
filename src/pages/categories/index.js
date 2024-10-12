@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate  } from 'react-router-dom';
-
+import trim from 'lodash/trim';
 import './categories.css';
+
+import { Spinner } from '@chakra-ui/react';
 
 import Everyday from '../../images/categories/everyday.png';
 import Morning from '../../images/categories/morning.png';
@@ -28,11 +30,42 @@ import Usd from '../../images/usd.png';
 import Location from '../../images/note.png';
 import CategoriesActive from '../../images/categories-active.png';
 import ArrowBack from '../../images/arrow-white.png';
+import ArrowRight from '../../images/arrow-right.png';
 import Home from '../../images/home.png';
+
+import { useFetchCategoriesQuery } from 'store';
+
+const categoryImages = {
+    'Повседневные': Everyday,
+    'Утро': Morning,
+    'Питание': Nutrition,
+    'Сон': Sleep,
+    'Творчество': Creativity,
+    'Внутренний ребенок': Child,
+    'Изучение языков': Languages,
+    'Умение учиться': Study,
+    'Медитация': Meditation,
+    'Планирование': Planing,
+    'Без прокрастинации': NoProcrastination,
+    'Публичные выступления': Performance,
+    'Развитие второй руки': Assistent,
+    'Знание себя': Yourself,
+    'Управление стрессом': StressManagement,
+    'Активное слушание': Listen,
+    'Быть дома': HomeCategory,
+    'Экологическая сознательность': Ecolodgy,
+    'Эмоциональный интеллект': Emotion,
+    'Нетворкинг': Networking,
+    'Благотворительность': Charity
+}
 
 const Categories = () => {
   const navigate = useNavigate();
-  const elementWidth = 50;
+  const {isLoading, isError, data = []} = useFetchCategoriesQuery();
+
+  const elementWidth = () => {
+    return Math.floor(Math.random() * (100 - 0));
+  };
   return (
     <div className="home">
         <div className='header-categories'>
@@ -49,342 +82,48 @@ const Categories = () => {
         <div className='content'>
 
             <div className='categories'>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Повседневные</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${elementWidth}%`,
-                                }}>
+                {
+                    isLoading ? (
+                        <>
+                            <div className='spinner'>
+                                <Spinner size='xl' />
                             </div>
-                        </div>
-                        <div className='progress-result'>20/20</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Morning} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Утро</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${100}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>20/20</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Nutrition} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Питание</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Sleep} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Сон</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Creativity} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Творчество</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Child} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Внутренний ребенок</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Languages} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Изучение языков</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Study} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Умение учиться</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Meditation} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Медитация</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Planing} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Планирование</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={NoProcrastination} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Без прокрастинации</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Performance} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Публичные выступления</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Assistent} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Развитие второй руки</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Yourself} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Знание себя</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={StressManagement} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Управление стрессом</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Listen} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Активное слушание</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={HomeCategory} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Быть дома</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Ecolodgy} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Экологическая сознательность</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Emotion} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Эмоциональный интеллект</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Networking} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Нетворкинг</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
-                <div className="category">
-                    <div className='category-photo'>
-                        <img src={Charity} />
-                    </div>
-                    <div className='category-progress'>
-                        <div>Благотворительность</div>
-                        <div className='progress-bar'>
-                            <div className='base'></div>
-                            <div className='progress' style={{
-                                width: `${30}%`,
-                                }}>
-                            </div>
-                        </div>
-                        <div className='progress-result'>25/75</div>
-                    </div>
-                </div>
+                        </>
+                    ) : (
+                            <>
+                                {
+                                    data.map((item, index) => {
+                                        const progress = elementWidth();
+                                        return (
+                                            <div className="category">
+                                                <div className='category-photo'>
+                                                    <img src={categoryImages[trim(item.name)] || Everyday} />
+                                                </div>
+                                                <div className='category-progress'>
+                                                    <div>{item.name}</div>
+                                                    <div className='progress-bar'>
+                                                        <div className='base'></div>
+                                                        <div className='progress' style={{
+                                                            width: `${progress}%`,
+                                                            }}>
+                                                        </div>
+                                                    </div>
+                                                    <div className='progress-result'>
+                                                        {
+                                                            progress + '/100'
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <img src={ArrowRight} />
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </>
+                        )
+                }
             </div>
         </div>
         <div className="down">

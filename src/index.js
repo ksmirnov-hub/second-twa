@@ -1,8 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react'
 import App from './App';
+import { store } from './store'
 import { initMiniApp, mockTelegramEnv, parseInitData } from '@telegram-apps/sdk';
 
 const initializeTelegramSDK = async () => {
@@ -68,7 +70,9 @@ const root = createRoot(container);
 root.render(
       <BrowserRouter>
 				<ChakraProvider>
-					<App />
+          <Provider store={store}>
+					  <App />
+          </Provider>
 				</ChakraProvider>
       </BrowserRouter>
 );
