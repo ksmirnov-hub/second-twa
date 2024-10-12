@@ -33,7 +33,7 @@ import ArrowBack from '../../images/arrow-white.png';
 import ArrowRight from '../../images/arrow-right.png';
 import Home from '../../images/home.png';
 
-import { useFetchCategoriesQuery } from 'store';
+import { useFetchCategoriesQuery } from '../../store';
 
 const categoryImages = {
     'Повседневные': Everyday,
