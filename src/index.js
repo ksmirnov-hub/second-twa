@@ -14,7 +14,7 @@ const initializeTelegramSDK = async () => {
     const [miniApp] = initMiniApp();
 
     await miniApp.ready();
-    console.log('window.Telegram.WebApp', window.Telegram.WebApp)
+    console.log('window.Telegram.WebApp', window.Telegram.WebApp.initDataUnsafe.user.id)
   } catch (error) {
     // В случае ошибки инициализируем фейковое окружение
     console.error('Ошибка при инициализации Telegram:', error);

@@ -95,7 +95,7 @@ const Categories = () => {
                                     data.map((item, index) => {
                                         const progress = elementWidth();
                                         return (
-                                            <div className="category">
+                                            <div className="category" key={index}>
                                                 <div className='category-photo'>
                                                     <img src={categoryImages[trim(item.name)] || Everyday} />
                                                 </div>

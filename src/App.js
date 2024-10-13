@@ -12,14 +12,21 @@ import Tasks from './pages/tasks';
 import CurrentTask from './pages/currentTask';
 import { useState, useEffect } from 'react';
 
+import { useRegisterProfileMutation } from '../src/store';
+
 const App = () => {
 
   const [startPage, setStartPage] = useState(<Hello />);
+	const [ registerProfile ] = useRegisterProfileMutation();
 
   useEffect(() => {
     setTimeout(() => {
       setStartPage(<Start />)
     }, 3000)
+  }, [])
+
+  useEffect(() => {
+    registerProfile();
   }, [])
 
   const renderStart = () => {
