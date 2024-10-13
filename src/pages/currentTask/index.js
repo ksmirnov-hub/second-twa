@@ -55,7 +55,7 @@ const Tasks = () => {
             <div className='arrow'>
                 <button
                     className='button-flat'
-                    onClick={() => {navigate('/start')}}  
+                    onClick={() => {navigate('/tasks')}}  
                 >
                     <img src={ArrowBack} alt="" />
                 </button>

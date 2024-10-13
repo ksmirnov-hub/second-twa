@@ -46,7 +46,11 @@ const Tasks = () => {
                                 {
                                     data.map((item, index) => {
                                         return (
-                                          <div className="task active" key={index}>
+                                          <div
+                                            className="task active"
+                                            key={index}
+                                            onClick={() => navigate('/task')}
+                                          >
                                             <div className='task-photo'>
                                                 <img src={Everyday} alt="Type" />
                                             </div>
