@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate, useLocation  } from 'react-router-dom';
 import './tasks.scss';
 import Usd from '../../images/usd.png';
 import NoteActive from '../../images/note-active.png';
@@ -9,12 +9,17 @@ import ArrowRight from '../../images/arrow-right.png';
 import Home from '../../images/home.png';
 import Coins from '../../images/coins.png';
 import Everyday from '../../images/categories/everyday.png';
+import { Spinner } from '@chakra-ui/react';
+
+import { useGetTasksQuery } from '../../store';
 
 const Tasks = () => {
   const navigate = useNavigate();
+  const { state = {} } = useLocation();
+  const { isLoading, data = []} = useGetTasksQuery(state?.category_id);
 
   return (
-    <div className="home">
+    <div className="tasks">
         <div className='header-categories'>
             <div className='arrow'>
                 <button
@@ -26,193 +31,70 @@ const Tasks = () => {
             </div>
             <div className='title'>Задания</div>
         </div>
-        <div className='content'>
+        <div className='tasks-content'>
 
             <div className='categories'>
-                <div className="task active">
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Покормить котов</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div
-                  className="task active"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Прочитать книгу</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div className="task active"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Сходить в музей</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div className="task"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Начать изучать язык</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div className="task"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Узнать мнение незнакомца о фильме</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div className="task"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Новое задание</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div className="task"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Узнать мнение незнакомца о фильме</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>1</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
-                <div className="task"
-                  onClick={() => navigate('/task')}
-                >
-                    <div className='task-photo'>
-                        <img src={Everyday} />
-                    </div>
-                    <div className='task-name'>
-                        <div>
-                          <div>Узнать мнение незнакомца о фильме</div>
-                        </div>
-                        <div className='category-name'>Повседневные</div>
-                        <div className='coins'>
-                          <img src={Coins} />
-                          <div className='coins-number'>2</div>
-                        </div>
-                    </div>
-                    <div>
-                      <img src={ArrowRight} />
-                    </div>
-                </div>
+            {
+                    isLoading ? (
+                        <>
+                            <div className='spinner'>
+                                <Spinner size='xl' />
+                            </div>
+                        </>
+                    ) : (
+                            <>
+                                {
+                                    data.map((item, index) => {
+                                        return (
+                                          <div className="task active" key={index}>
+                                            <div className='task-photo'>
+                                                <img src={Everyday} alt="Type" />
+                                            </div>
+                                            <div className='task-name'>
+                                                <div>
+                                                  <div>{item.name}</div>
+                                                </div>
+                                                <div className='category-name'>Повседневные</div>
+                                                <div className='coins'>
+                                                  <img src={Coins} alt="Coins" />
+                                                  <div className='coins-number'>{item.reward}</div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                              <img src={ArrowRight} />
+                                            </div>
+                                        </div>
+                                        )
+                                    })
+                                }
+                            </>
+                        )
+                }
 
             </div>
-        </div>
-        <div className="down">
-            <div>
-                <img src={Usd} alt="" />
-            </div>
-            <div>
-                <img src={NoteActive} alt="" />
-            </div>
-            <div>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/categories')}}  
-                >
-                  <img src={Category} alt="" />
-                </button>
-            </div>
-            <div>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/home')}}  
-                >
-                    <img src={Home} alt="" />
-                </button>
+            <div className="down">
+                <div>
+                    <img src={Usd} alt="" />
+                </div>
+                <div>
+                    <img src={NoteActive} alt="" />
+                </div>
+                <div>
+                    <button
+                        className='button-flat'
+                        onClick={() => {navigate('/categories')}}  
+                    >
+                      <img src={Category} alt="" />
+                    </button>
+                </div>
+                <div>
+                    <button
+                        className='button-flat'
+                        onClick={() => {navigate('/home')}}  
+                    >
+                        <img src={Home} alt="" />
+                    </button>
+                </div>
             </div>
         </div>
     </div>

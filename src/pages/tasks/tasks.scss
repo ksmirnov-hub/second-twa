@@ -1,9 +1,11 @@
-.home {
+.tasks {
     width: 100%;
     height: 100%;
-    background_: rgba(250, 255, 245, 1);
     background: rgba(249, 249, 249, 1);
 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .header {
@@ -21,11 +23,15 @@
     text-align: left;
 }
 
-.content {
+.tasks-content {
     background: rgba(249, 249, 249, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-.header-categories {
+.header-tasks {
     font-family: "Work Sans", sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -34,7 +40,7 @@
     justify-content: flex-start; 
     align-items: center;
     border: none;
-    height: 67px;
+    min-height: 67px;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
     background: rgba(0, 184, 88, 1);
 }

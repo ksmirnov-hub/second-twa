@@ -95,7 +95,13 @@ const Categories = () => {
                                     data.map((item, index) => {
                                         const progress = elementWidth();
                                         return (
-                                            <div className="category" key={index}>
+                                            <div
+                                                className="category"
+                                                key={index}
+                                                onClick={() => {
+                                                    navigate('/tasks', { state: { category_id: item.id } })
+                                                }}
+                                            >
                                                 <div className='category-photo'>
                                                     <img src={categoryImages[trim(item.name)] || Everyday} />
                                                 </div>
