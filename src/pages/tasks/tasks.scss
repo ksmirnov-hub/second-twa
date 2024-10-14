@@ -97,6 +97,8 @@
     .task-photo {
         display: flex;
         align-items: center;
+        min-width: 50px;
+        min-height: 50px;
     }
 
     .task-name {
