@@ -9,7 +9,6 @@ import EnterSecond from '../../images/enter-second.png';
 const Start = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
-  console.log('step body', step)
 
   return (
     <div className="start">

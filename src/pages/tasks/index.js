@@ -49,7 +49,9 @@ const Tasks = () => {
                                           <div
                                             className="task active"
                                             key={index}
-                                            onClick={() => navigate('/task')}
+                                            onClick={() => {
+                                                navigate('/task', { state: { task_id: item.id } })
+                                            }}
                                           >
                                             <div className='task-photo'>
                                                 <img src={Everyday} alt="Type" />

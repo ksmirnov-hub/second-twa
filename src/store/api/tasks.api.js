@@ -5,6 +5,7 @@ import baseQueryWithToken from './helpers/customFetchBase';
 const WEPAPP_URI = 'https://api.life-coin.ru';
 
 const TASKS = '/api/tasks/all';
+const TASK = '/api/task';
 
 export const tasksApi = createApi({
 	reducerPath: 'tasksApi',
@@ -13,7 +14,6 @@ export const tasksApi = createApi({
 	endpoints: (builder) => ({
 		getTasks: builder.query({
 			query(categoryId) {
-                console.log('categoryId', categoryId)
                 let user = window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649';
                 let parameters = ''
                 if (categoryId) {
@@ -25,9 +25,60 @@ export const tasksApi = createApi({
 			  },
 			providesTags: (result) => ["Tasks"],
 		}),
+		getOneTask: builder.query({
+			query(taskId) {
+				return {
+                    url: WEPAPP_URI + TASK + '/' + taskId,
+				};
+			  },
+			providesTags: (result) => ["Task"],
+		}),
+		completeTask: builder.mutation({
+			query(taskId) {
+				console.log('taskId', taskId)
+				return {
+                    url: WEPAPP_URI + TASK + '/complete',
+					method: 'POST',
+                    body: {
+                        task: taskId,
+                        user: window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649'
+                    }
+				};
+			  },
+			providesTags: (result) => ["Task"],
+			invalidatesTags: (result) => ["Quote"],
+		}),
+		reviewTask: builder.mutation({
+			query({ taskId, review }) {
+				console.log('review', review)
+				return {
+                    url: WEPAPP_URI + TASK + '/review',
+					method: 'POST',
+                    body: {
+                        task: taskId,
+                        user: window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649',
+						review
+                    }
+				};
+			  },
+			providesTags: (result) => ["Task"],
+		}),
+		getQuote: builder.query({
+			query() {
+				return {
+                    url: WEPAPP_URI + '/api/quotes/random',
+					method: 'GET'
+				};
+			  },
+			providesTags: (result) => ["Quote"],
+		}),
 	}),
 })
 
 export const {
 	useGetTasksQuery,
+	useGetOneTaskQuery,
+	useCompleteTaskMutation,
+	useReviewTaskMutation,
+	useGetQuoteQuery
 } = tasksApi;
