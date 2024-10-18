@@ -29,6 +29,7 @@ import {
     useGetOneTaskQuery,
     useCompleteTaskMutation,
     useReviewTaskMutation,
+    useDeclineTaskMutation,
     useGetQuoteQuery
 } from '../../store';
 
@@ -45,6 +46,15 @@ const Tasks = () => {
   const { isLoading: isQuoteLoading, data: quote = {}} = useGetQuoteQuery(null, {
     skip
   })
+
+  const [
+    declineTask, 
+    {
+        isLoading: isDeclineLoading,
+        isSuccess: isDeclineSuccess,
+        isError: isDeclineError,
+    }
+  ] = useDeclineTaskMutation();
 
   const [ 
     completeTask,
@@ -94,7 +104,16 @@ const Tasks = () => {
   }, [isOpen])
 
   useEffect(() => {
-    onClose();
+    if (isDeclineSuccess) {
+        navigate('/tasks');
+    }
+  }, [isDeclineSuccess])
+
+  useEffect(() => {
+    if (isSuccess) {
+        navigate('/tasks');
+        onClose();
+    }
   }, [isSuccess])
 
   useEffect(() => {
@@ -201,7 +220,9 @@ const Tasks = () => {
                     </button>
                 </div>
                 <div>
-                    <button>
+                    <button
+                        onClick={() => declineTask(state?.task_id)}
+                    >
                         Отказаться
                     </button>
                 </div>
@@ -358,7 +379,6 @@ const Tasks = () => {
                         w='100%'
                         color='white'
                         onClick={() => {
-                            console.log('review', review)
                             if (!review.length) {
                                 return false;
                             }

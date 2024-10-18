@@ -48,6 +48,21 @@ export const tasksApi = createApi({
 			providesTags: (result) => ["Task"],
 			invalidatesTags: (result) => ["Quote"],
 		}),
+		declineTask: builder.mutation({
+			query(taskId) {
+				console.log('taskId', taskId)
+				return {
+                    url: WEPAPP_URI + TASK + '/decline',
+					method: 'POST',
+                    body: {
+                        task: taskId,
+                        user: window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649'
+                    }
+				};
+			  },
+			providesTags: (result) => ["Task"],
+			invalidatesTags: (result) => ["Quote"],
+		}),
 		reviewTask: builder.mutation({
 			query({ taskId, review }) {
 				console.log('review', review)
@@ -80,5 +95,6 @@ export const {
 	useGetOneTaskQuery,
 	useCompleteTaskMutation,
 	useReviewTaskMutation,
+	useDeclineTaskMutation,
 	useGetQuoteQuery
 } = tasksApi;

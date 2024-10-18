@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 
 import './home.css';
@@ -11,8 +11,30 @@ import List from '../../images/category.png';
 import HomeActive from '../../images/home-active.png';
 import ArrowBack from '../../images/arrow-white.png';
 
+import { useRegisterTapMutation } from '../../store';
+
 const Home = () => {
   const navigate = useNavigate();
+  const [balance, setBalance] = useState(0);
+  const [
+    registerTap,
+    {
+        data = {},
+        isLoading,
+        isSuccess,
+        isError,
+        error,
+        reset
+    }
+] = useRegisterTapMutation();
+
+useEffect(() => {
+    if (data.balance) {
+        setBalance(data.balance);
+    }
+}, [data.balance])
+
+console.log('data', data)
   return (
     <div className="home">
         <div className='header-home'>
@@ -42,12 +64,14 @@ const Home = () => {
             </div>
 
             <div className='photo-block'>
-                <button>
+                <button
+                    onClick={() => registerTap()}
+                >
                     <img src={LogoHome} />
                 </button>
             </div>
             <div className='scores'>
-                120 lifecoin
+                {balance} lifecoin
             </div>
         </div>
         <div className="down">
