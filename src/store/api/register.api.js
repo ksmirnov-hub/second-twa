@@ -17,8 +17,8 @@ export const registerApi = createApi({
                     url: WEPAPP_URI + REGISTER,
 					method: 'POST',
                     body: {
-                        name: window.Telegram?.WebApp?.initDataUnsafe?.user?.username,
-                        telegram_id: window.Telegram?.WebApp?.initDataUnsafe?.user?.id
+                        name: window.Telegram?.WebApp?.initDataUnsafe?.user?.username || 'test_user',
+                        telegram_id: window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649'
                     }
 				};
 			  },

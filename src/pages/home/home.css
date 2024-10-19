@@ -85,6 +85,7 @@
     padding: 16px 10px 16px 10px;
     border-radius: 8px;
     display: flex;
+    column-gap: 8px;
     justify-content: center;
     align-items: center;
     font-family: 'SF Pro Display';
@@ -94,7 +95,25 @@
     text-align: left;
     color: rgba(0, 184, 88, 1);
     background: rgba(254, 254, 254, 1);
+
+    & > .total {
+        font-family: 'SF Pro Display';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        text-align: left;
+        color: rgba(49, 55, 51, 1);
+    }
+    & > .total-scores,
+    & > .balance-scores {
+        display: flex;
+        column-gap: 4px;
+        & > .balance {
+            min-width: 20px;
+        }
+    }
 }
+
 
 .block.no-border {
     border: none;

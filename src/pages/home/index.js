@@ -10,12 +10,14 @@ import Location from '../../images/note.png';
 import List from '../../images/category.png';
 import HomeActive from '../../images/home-active.png';
 import ArrowBack from '../../images/arrow-white.png';
-
+import { useSelector, useDispatch } from 'react-redux';
 import { useRegisterTapMutation } from '../../store';
+import { profileActions } from '../../store';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [balance, setBalance] = useState(0);
+  const dispatch = useDispatch();
+  const profile = useSelector((state) => state.profile);
   const [
     registerTap,
     {
@@ -29,12 +31,11 @@ const Home = () => {
 ] = useRegisterTapMutation();
 
 useEffect(() => {
-    if (data.balance) {
-        setBalance(data.balance);
+    if (isSuccess) {
+        dispatch(profileActions.getProfile());
     }
-}, [data.balance])
+}, [isSuccess])
 
-console.log('data', data)
   return (
     <div className="home">
         <div className='header-home'>
@@ -71,7 +72,18 @@ console.log('data', data)
                 </button>
             </div>
             <div className='scores'>
-                {balance} lifecoin
+                <div className='total'>Всего намайнено:</div>
+                <div className='total-scores'>
+                    <div className='balance'>{profile.available_for_tap} </div>
+                    <div>lifecoin</div>
+                </div>
+            </div>
+            <div className='scores'>
+                <div className='total'>Общий баланс:</div>
+                <div className='balance-scores'>
+                    <div className='balance'>{profile.balance} </div>
+                    <div>lifecoin</div>
+                </div>
             </div>
         </div>
         <div className="down">

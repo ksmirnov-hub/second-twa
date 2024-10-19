@@ -11,30 +11,26 @@ import Categories from './pages/categories';
 import Tasks from './pages/tasks';
 import CurrentTask from './pages/currentTask';
 import { useState, useEffect } from 'react';
-
-import { useRegisterProfileMutation } from '../src/store';
+import { profileActions } from '../src/store';
+import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
-
-  const [startPage, setStartPage] = useState(<Hello />);
-	const [ registerProfile ] = useRegisterProfileMutation();
-
-  useEffect(() => {
-    setTimeout(() => {
-      setStartPage(<Start />)
-    }, 3000)
-  }, [])
+  const dispatch = useDispatch();
+	const profile = useSelector((state) => state.profile);
+  const [ startPage, setStartPage ] = useState(<Hello />);
 
   useEffect(() => {
-    registerProfile();
-  }, [])
+    const isNewUser = profile.is_new_user;
+    if (profile.id) {
+      setTimeout(() => {
+        setStartPage(isNewUser ? <Start /> : <Home />)
+      }, 3000)
+    }
+  }, [profile])
 
-  const renderStart = () => {
-
-    setTimeout(() => {
-
-    }, 3000)
-  }
+	useEffect(() => {
+			dispatch(profileActions.getProfile());
+	}, [dispatch])
 
   return (
     <Routes>
