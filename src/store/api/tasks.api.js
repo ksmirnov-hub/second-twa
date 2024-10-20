@@ -6,7 +6,7 @@ const WEPAPP_URI = 'https://api.life-coin.ru';
 
 const TASKS = '/api/tasks';
 const TASK = '/api/task';
-
+// Test
 export const tasksApi = createApi({
 	reducerPath: 'tasksApi',
 	baseQuery: baseQueryWithToken,
