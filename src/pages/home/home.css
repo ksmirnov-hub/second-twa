@@ -106,6 +106,7 @@
     }
     & > .total-scores,
     & > .balance-scores {
+        flex-direction: row;
         display: flex;
         column-gap: 4px;
         & > .balance {

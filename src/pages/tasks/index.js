@@ -60,7 +60,7 @@ const Tasks = () => {
                                                 <div>
                                                   <div>{item.name}</div>
                                                 </div>
-                                                <div className='category-name'>Повседневные</div>
+                                                <div className='category-name'>{item.category}</div>
                                                 <div className='coins'>
                                                   <img src={Coins} alt="Coins" />
                                                   <div className='coins-number'>{item.reward}</div>
