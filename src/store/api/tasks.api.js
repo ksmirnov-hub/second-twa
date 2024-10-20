@@ -15,9 +15,9 @@ export const tasksApi = createApi({
 		getTasks: builder.query({
 			query(categoryId) {
                 let user = window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649';
-                let parameters = ''
+                let parameters = '?user=' + user  + '&is_completed=0'
                 if (categoryId) {
-                    parameters = '?user=' + user + '&category=' + categoryId + '&is_completed=0'
+                    parameters += '&category=' + categoryId;
                 }
 				return {
                     url: WEPAPP_URI + TASKS + parameters,
