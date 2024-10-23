@@ -39,15 +39,7 @@ useEffect(() => {
   return (
     <div className="home">
         <div className='header-home'>
-            <div className='arrow'>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/start')}}  
-                >
-                    <img src={ArrowBack} alt="" />
-                </button>
-            </div>
-            <div className='title'>Домой</div>
+            <div className='home-title'>Домой</div>
         </div>
         <div className='content'>
 
@@ -59,8 +51,22 @@ useEffect(() => {
                     </div>
                     <div className='subscribe'>Подписаться</div>
                 </div>
-                <div className="block">Премиум подписка</div>
-                <div className="block">Календарь</div>
+                <div className="block">
+                    <div className="row">
+                        <div className='name'>
+                            Премиум подписка
+                        </div>
+                    </div>
+                    <div className='subscribe'>В ожидании</div>
+                </div>
+                <div className="block">
+                    <div className="row">
+                        <div className='name'>
+                        Календарь
+                        </div>
+                    </div>
+                    <div className='subscribe'>В ожидании</div>
+                </div>
                 <div className="block">Техподдержка</div>
             </div>
 

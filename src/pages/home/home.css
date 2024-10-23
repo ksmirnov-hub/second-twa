@@ -5,6 +5,16 @@
     background: rgba(249, 249, 249, 1);
 
 }
+.home-title {
+    font-family: 'SF Pro Display';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+    color: rgba(254, 254, 254, 1);
+    margin-left: 26px;
+  }
+
 .title {
     font-family: 'SF Pro Display';
     font-size: 24px;
@@ -14,6 +24,7 @@
     color: rgba(254, 254, 254, 1);
     margin-left: 62px;
   }
+
 .header {
     height: 52px;
     display: flex;
@@ -31,6 +42,7 @@
 
 .content {
     background: rgba(249, 249, 249, 1);
+    padding-bottom: 90px;
 }
 
 .header-home {
@@ -142,6 +154,8 @@
 .down {
     height: 90px;
     display: flex;
+    position: fixed;
+    top: 89%;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;

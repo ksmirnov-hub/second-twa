@@ -45,11 +45,12 @@
     background: rgba(0, 184, 88, 1);
 }
 
-.categories {
+.tasks-inner {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
     padding: 8px;
+    padding-bottom: 90px;
 }
 
 .photo-block button {
@@ -189,6 +190,9 @@
 
 .down {
     height: 90px;
+    position: fixed;
+    top: 89%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

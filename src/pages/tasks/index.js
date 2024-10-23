@@ -33,7 +33,7 @@ const Tasks = () => {
         </div>
         <div className='tasks-content'>
 
-            <div className='categories'>
+            <div className='tasks-inner'>
             {
                     isLoading ? (
                         <>

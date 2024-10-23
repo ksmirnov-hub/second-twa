@@ -147,6 +147,8 @@
 .down {
     height: 90px;
     display: flex;
+    position: fixed;
+    top: 89%;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
