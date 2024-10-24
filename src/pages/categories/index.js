@@ -99,7 +99,12 @@ const Categories = () => {
                                                 className="category"
                                                 key={index}
                                                 onClick={() => {
-                                                    navigate('/tasks', { state: { category_id: item.id } })
+                                                    navigate('/category', {
+                                                        state: {
+                                                            category_id: item.id,
+                                                            description: item.description,
+                                                            name: item.name
+                                                        } })
                                                 }}
                                             >
                                                 <div className='category-photo'>

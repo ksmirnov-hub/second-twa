@@ -14,7 +14,18 @@ export const categoriesApi = createApi({
 		fetchCategories: builder.query({
 			query() {
 				return {
-                    url: WEPAPP_URI + CATEGORIES,
+                    url: WEPAPP_URI + CATEGORIES + '?user=' + window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649',
+					method: 'GET',
+				};
+			  },
+			providesTags: (result) => ["Categories"],
+		}),
+		fetchOneCategory: builder.query({
+			query(id) {
+				return {
+                    url: WEPAPP_URI + CATEGORIES
+						+ '?user=' + (window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649')
+						+ '&category=' + id,
 					method: 'GET',
 				};
 			  },
@@ -25,4 +36,5 @@ export const categoriesApi = createApi({
 
 export const {
 	useFetchCategoriesQuery,
+	useFetchOneCategoryQuery
 } = categoriesApi;

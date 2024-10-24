@@ -10,6 +10,7 @@ import Calendar from './pages/calendar';
 import Categories from './pages/categories';
 import Tasks from './pages/tasks';
 import CurrentTask from './pages/currentTask';
+import CurrentCategory from './pages/currentCategory';
 import { useState, useEffect } from 'react';
 import { profileActions } from '../src/store';
 import { useSelector, useDispatch } from 'react-redux';
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="start" element={<Start />} />
         <Route path="hello" element={<Hello />} />
         <Route path='task' element={<CurrentTask />} />
+        <Route path='category' element={<CurrentCategory />} />
         <Route path="categories" element={<Categories />} />
         <Route  path="home" element={<Home />} />
         <Route  path="account" element={<Account />} />
