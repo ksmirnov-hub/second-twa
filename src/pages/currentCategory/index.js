@@ -49,6 +49,13 @@ const CurrentCategory = () => {
             </div>
 
         </div>
+        <div className='content-category-control'>
+            <button
+                onClick={() => {}}
+            >
+                Сделать приоритетом
+            </button>
+        </div>
         <div className="down">
             <div>
                 <img src={Usd} alt="" />

@@ -4,6 +4,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background: white;
+    padding-bottom: 28px;
+}
+
+.current-category {
+    background: rgba(249, 249, 249, 1);
 }
 
 .content-category-icon {
@@ -30,4 +36,28 @@
     line-height: 20px;
     text-align: center;
     color: rgba(137, 137, 137, 1);
+}
+
+.content-category-control {
+    display: flex;
+    justify-content: center;
+
+    & > button {
+        width: 354px;
+        height: 48px;
+        top: 676px;
+        left: 18px;
+        padding: 16px 10px 16px 10px;
+        gap: 10px;
+        border-radius: 8px;
+        opacity: 0px;
+        background-color: rgba(0, 184, 88, 1);
+        color:white;
+        font-family: 'SF Pro Display';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        text-align: center;
+        margin-top: 72px;
+    }
 }
