@@ -31,6 +31,10 @@ const Home = () => {
 ] = useRegisterTapMutation();
 
 useEffect(() => {
+    registerTap();
+}, [])
+
+useEffect(() => {
     if (isSuccess) {
         dispatch(profileActions.getProfile());
     }
