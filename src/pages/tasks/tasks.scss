@@ -8,41 +8,12 @@
     justify-content: start;
 }
 
-.header {
-    height: 52px;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    padding: 0 24px;
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-
-    font-family: "Work Sans", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 22px;
-    text-align: left;
-}
-
 .tasks-content {
     background: rgba(249, 249, 249, 1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-}
-
-.header-tasks {
-    font-family: "Work Sans", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 22px;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    border: none;
-    min-height: 67px;
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-    background: rgba(0, 184, 88, 1);
 }
 
 .tasks-inner {

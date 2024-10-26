@@ -68,16 +68,20 @@ const Categories = () => {
   };
   return (
     <div className="home">
-        <div className='header-categories'>
-            <div className='arrow'>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/start')}}  
-                >
-                    <img src={ArrowBack} alt="" />
-                </button>
+        <div className='header'>
+            <div className='navigation-block'>
+                <div className='header-arrow'>
+                    <button
+                        className='button-flat'
+                        onClick={() => {
+                            navigate('/home')
+                        }} 
+                    >
+                        <img src={ArrowBack} alt="" />
+                    </button>
+                </div>
+                <div className='title'>Домой</div>
             </div>
-            <div className='title'>Прогресс</div>
         </div>
         <div className='content'>
 

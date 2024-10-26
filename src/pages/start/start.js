@@ -3,30 +3,71 @@ import { useNavigate  } from 'react-router-dom';
 
 import './start.css';
 
-import EnterFirst from '../../images/enter-first.png';
-import EnterSecond from '../../images/enter-second.png';
+import SliderIcon from '../../images/start/slider';
+import FirstStepIcon from '../../images/start/first_step'
+import SecondStepIcon from '../../images/start/second_step'
+import ThirdStepIcon from '../../images/start/first_step';
 
 const Start = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
 
+  const SelectIcon = ({step}) => {
+    switch (step) {
+      case 1:
+        return <FirstStepIcon />;
+      case 2:
+        return <SecondStepIcon />;
+      case 3:
+        return <ThirdStepIcon />;
+    }
+  }
+
+  const BaseText = ({step}) => {
+    switch (step) {
+      case 1:
+        return (
+          <>
+            <div>
+              Выполняй задания — получай токены Life
+            </div>
+            <div>
+              С помощью Life ты сможешь вести более продуктивную и осмысленную жизнь
+            </div>
+          </>
+        );
+      case 2:
+        return (
+          <div>
+            Выбирай до трех приоритетных категорий
+          </div>
+        );
+      case 3:
+        return (
+          <div>
+            Получай ежедневно по 5 заданий из случайных категорий и 5 из приоритетных
+          </div>
+        );
+    }
+  }
+
   return (
     <div className="start">
       <div className="upper-block">
-        {
-          step === 1
-            ? 'Добро пожаловать в life Coin'
-            : 'Life - это сообщество людей, которые ценят время'
-        }
-      </div>
-      <div className="lower-block">
         <div className="img">
-          <img width='211px' height='202px' src={step === 1 ? EnterFirst : EnterSecond} alt='' />
+          <SelectIcon step={step} />
+          </div>
         </div>
-        <div className="controls">
+      <div className='middle-block'>
+        <BaseText step={step} />
+      </div>
+      <div> 
+        <SliderIcon step={step}/>
+      </div>
+      <div className="controls">
           <button
               onClick={() => setStep((step) => {
-                if (step + 1 === 3) {
+                if (step + 1 === 4) {
                   navigate('/home');
                 }
                 return step + 1;
@@ -35,7 +76,6 @@ const Start = () => {
             Дальше
           </button>
         </div>
-      </div>
     </div>
   );
 };

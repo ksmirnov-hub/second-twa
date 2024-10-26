@@ -141,16 +141,20 @@ const Tasks = () => {
 
   return (
     <div className="current">
-        <div className='header-categories'>
-            <div className='arrow'>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/tasks')}}  
-                >
-                    <img src={ArrowBack} alt="" />
-                </button>
+        <div className='header'>
+            <div className='navigation-block'>
+                <div className='header-arrow'>
+                    <button
+                        className='button-flat'
+                        onClick={() => {
+                            navigate('/tasks')
+                        }} 
+                    >
+                        <img src={ArrowBack} alt="" />
+                    </button>
+                </div>
+                <div className='title'>Задания</div>
             </div>
-            <div className='title'>Задания</div>
         </div>
         <div className='current-task-content'>
         {

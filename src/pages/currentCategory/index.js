@@ -20,21 +20,23 @@ const CurrentCategory = () => {
 
   return (
     <div className="current-category">
-        <div className='header-categories'>
-            <div className='arrow'>
-                <button
-                    className='button-flat'
-                    onClick={() => {
-                        navigate('/tasks', {
-                            state: {
-                                category_id: state?.category_id,
-                            } })
-                    }} 
-                >
-                    <img src={ArrowBack} alt="" />
-                </button>
+        <div className='header'>
+            <div className='navigation-block'>
+                <div className='header-arrow'>
+                    <button
+                        className='button-flat'
+                        onClick={() => {
+                            navigate('/tasks', {
+                                state: {
+                                    category_id: state?.category_id,
+                                } })
+                        }} 
+                    >
+                        <img src={ArrowBack} alt="" />
+                    </button>
+                </div>
+                <div className='title'>Пргоресс</div>
             </div>
-            <div className='title'>Задания</div>
         </div>
         <div className='content-category'>
 

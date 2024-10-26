@@ -20,16 +20,23 @@ const Tasks = () => {
 
   return (
     <div className="tasks">
-        <div className='header-categories'>
-            <div className='arrow'>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/start')}}  
-                >
-                    <img src={ArrowBack} alt="" />
-                </button>
+        <div className='header'>
+            <div className='navigation-block'>
+                <div className='header-arrow'>
+                    <button
+                        className='button-flat'
+                        onClick={() => {
+                            navigate('/tasks', {
+                                state: {
+                                    category_id: state?.category_id,
+                                } })
+                        }} 
+                    >
+                        <img src={ArrowBack} alt="" />
+                    </button>
+                </div>
+                <div className='title'>Задания</div>
             </div>
-            <div className='title'>Задания</div>
         </div>
         <div className='tasks-content'>
 

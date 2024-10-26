@@ -1,15 +1,51 @@
 
 .start {
+    padding: 218px 18px 97px 18px;
     display: flex;
     align-items: center;
-    row-gap: 60px;
     flex-direction: column;
+    row-gap: 28px;
     height: 100%;
-    background-color: rgba(222, 255, 236, 1);  
+    background: radial-gradient(70.56% 70.56% at 50% 38.03%, #40E48F 0%, #00B858 100%);
+    height: max-content;
   }
   
+  .middle-block {
+    height: 164px;
+    padding: 30px 16px 30px 16px;
+    gap: 10px;
+    border-radius: 8px;
+    justify-content: space-around;
+    
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+    background: rgba(45, 192, 115, 1);
+    padding: 30px 16px 30px 16px;
+    color: rgba(254, 254, 254, 1);
+  
+    & > div {
+      text-align: center;
+      justify-content: space-around;
+      font-family: 'SF Pro Display';
+    }
+    & > div:nth-child(2) {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+      text-align: center;
+    }
+    & > div:nth-child(1) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21px;
+      text-align: center;
+    }
+  }
+
   .upper-block {
-    width: 253px;
+    width: 100%;
+    _background: radial-gradient(70.56% 70.56% at 50% 38.03%, #40E48F 0%, #00B858 100%);
     display: flex;
     align-items: end;
     justify-content: space-around;
@@ -63,14 +99,6 @@
   }
   
   .controls {
-    width: 207px;
-    height: 45px;
-    top: 612px;
-    left: 112px;
-    margin-top: 35px;
-    font-family: Poppins !important;
-    font-size: 20px;
-    font-weight: 600;
     border: none;
     width: 100%;
     display: flex;
