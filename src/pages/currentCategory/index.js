@@ -35,7 +35,7 @@ const CurrentCategory = () => {
                         <img src={ArrowBack} alt="" />
                     </button>
                 </div>
-                <div className='title'>Пргоресс</div>
+                <div className='title'>Прогресс</div>
             </div>
         </div>
         <div className='content-category'>
