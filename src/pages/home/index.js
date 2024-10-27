@@ -9,7 +9,11 @@ import Usd from '../../images/usd.png';
 import Location from '../../images/note.png';
 import List from '../../images/category.png';
 import HomeActive from '../../images/home-active.png';
-import ArrowBack from '../../images/arrow-white.png';
+import PremiumIcon from '../../images/premium';
+import ShareIcon from '../../images/share';
+import SupportIcon from '../../images/support';
+import ArrowRightIcon from '../../images/arrow-right.png';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { useRegisterTapMutation } from '../../store';
 import { profileActions } from '../../store';
@@ -40,6 +44,20 @@ useEffect(() => {
     }
 }, [isSuccess])
 
+const copyToClipBoard = () => {
+    navigator.clipboard.writeText('@SecondAppBot')
+    .then(() => {
+        var tooltip = document.getElementById("tooltip");
+        tooltip.classList.remove('hidden'); 
+        setTimeout(() => {
+            tooltip.classList.add('hidden'); 
+        }, 1000)
+    })
+    .catch(err => {
+      console.log('Something went wrong', err);
+    });
+}
+
   return (
     <div className="home">
         <div className='header-home'>
@@ -57,6 +75,9 @@ useEffect(() => {
                 </div>
                 <div className="block">
                     <div className="row">
+                        <div>
+                            <PremiumIcon />
+                        </div>
                         <div className='name'>
                             Премиум подписка
                         </div>
@@ -64,14 +85,39 @@ useEffect(() => {
                     <div className='subscribe'>В ожидании</div>
                 </div>
                 <div className="block">
-                    <div className="row">
+                    <div
+                     className="row relative"
+                     onClick={() => copyToClipBoard()}
+                    >
+                        <div>
+                            <ShareIcon />
+                        </div>
                         <div className='name'>
-                        Календарь
+                            Пригласи друга
+                        </div>
+                        <div id="tooltip" className='tooltip hidden'>
+                            Адрес скопирован
                         </div>
                     </div>
-                    <div className='subscribe'>В ожидании</div>
+                    <div className='subscribe'>
+                        <img src={ArrowRightIcon} alt="" />
+                    </div>
                 </div>
-                <div className="block">Техподдержка</div>
+                <div className="block">
+                    <div
+                        className="row"
+                    >
+                        <div>
+                            <SupportIcon />
+                        </div>
+                        <div className='name'>
+                            Техподдержка
+                        </div>
+                    </div>
+                    <div className='subscribe'>
+                        <img src={ArrowRightIcon} alt="" />
+                    </div>
+                </div>
             </div>
 
             <div className='photo-block'>

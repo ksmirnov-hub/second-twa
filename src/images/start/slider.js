@@ -11,5 +11,3 @@ const sliderIcon = ({
    );
 
 export default sliderIcon;
-
-

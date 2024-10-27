@@ -94,7 +94,7 @@
     & > .total-scores,
     & > .balance-scores {
         flex-direction: row;
-        display: flex;
+        display: flex !important;
         column-gap: 4px;
         & > .balance {
             min-width: 20px;
@@ -153,4 +153,28 @@
     column-gap: 9px;
     display: flex;
     justify-content: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.tooltip.hidden {
+    display: none;
+}
+
+.tooltip {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    border-radius: 4px;
+    width: 200px;
+    height: 30px;
+    top: -30px;
+    left: 0px;
+    background: rgba(192, 255, 219, 1);
+    font-family: 'SF Pro Display';
+    font-size: 14px;
+    color: rgba(137, 137, 137, 1);
 }
