@@ -28,7 +28,7 @@ body {
   background: rgba(0, 184, 88, 1);
 
   & > div {
-    display: flex;
+    display: flex !important;
   }
 
   & > div.navigation-block {
