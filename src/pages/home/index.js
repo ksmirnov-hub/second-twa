@@ -45,7 +45,7 @@ useEffect(() => {
 }, [isSuccess])
 
 const copyToClipBoard = () => {
-    navigator.clipboard.writeText('@SecondAppBot')
+    navigator.clipboard.writeText('@Life_coinbot')
     .then(() => {
         var tooltip = document.getElementById("tooltip");
         tooltip.classList.remove('hidden'); 
