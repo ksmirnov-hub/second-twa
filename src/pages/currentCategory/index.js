@@ -119,7 +119,7 @@ const CurrentCategory = () => {
                     addToFavorites(state?.category_id);
                 }}
             >
-                Сделать приоритетом
+               <div>Сделать приоритетом</div>  
             </button>
         </div>
         <div className="down">
