@@ -31,7 +31,12 @@ function createExtraActions() {
     function getProfile() {
         const urlParams = new URLSearchParams(window.location.search);
         const start = urlParams.get('start');
-    
+        const hash = window.location.hash.slice(1);
+        console.log(hash);
+
+        const telegramParams = new URLSearchParams(hash);
+        console.log('==', telegramParams.get('tgWebAppStartParam')); 
+
         const params = {
             name: window.Telegram?.WebApp?.initDataUnsafe?.user?.username || 'test_user',
             telegram_id: window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649',
