@@ -71,7 +71,7 @@
     }
 
     .category-progress {
-        flex-grow: 1;
+        flex-grow: 1 !important;
 
         .progress-bar {
             max-height: 4px;

@@ -34,6 +34,7 @@ body {
   & > div.navigation-block {
       margin-left: 18px;
       color: rgba(254, 254, 254, 1);
+      display: flex !important;
 
      & > div.title {
         font-family: 'SF Pro Display';

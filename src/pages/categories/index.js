@@ -63,9 +63,6 @@ const Categories = () => {
   const navigate = useNavigate();
   const {isLoading, isError, data = []} = useFetchCategoriesQuery();
 
-  const elementWidth = () => {
-    return Math.floor(Math.random() * (100 - 0));
-  };
   return (
     <div className="home">
         <div className='header'>
@@ -97,7 +94,6 @@ const Categories = () => {
                             <>
                                 {
                                     data.map((item, index) => {
-                                        const progress = elementWidth();
                                         return (
                                             <div
                                                 className="category"
@@ -119,13 +115,13 @@ const Categories = () => {
                                                     <div className='progress-bar'>
                                                         <div className='base'></div>
                                                         <div className='progress' style={{
-                                                            width: `${progress}%`,
+                                                            width: `${item.progress}%`,
                                                             }}>
                                                         </div>
                                                     </div>
                                                     <div className='progress-result'>
                                                         {
-                                                            progress + '/100'
+                                                            item.progress + '/' + item.tasks_count
                                                         }
                                                     </div>
                                                 </div>

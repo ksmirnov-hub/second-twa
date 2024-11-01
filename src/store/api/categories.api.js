@@ -15,7 +15,7 @@ export const categoriesApi = createApi({
 		fetchCategories: builder.query({
 			query() {
 				return {
-                    url: WEPAPP_URI + CATEGORIES + '?user=' + window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649',
+                    url: WEPAPP_URI + CATEGORIES + '?user=' + (window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649'),
 					method: 'GET',
 				};
 			  },
