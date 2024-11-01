@@ -5,6 +5,7 @@ import baseQueryWithToken from './helpers/customFetchBase';
 const WEPAPP_URI = 'https://api.life-coin.ru';
 
 const CATEGORIES = '/api/task-categories';
+const FAVORITES = '/api/fav-categories';
 
 export const categoriesApi = createApi({
 	reducerPath: 'categoriesApi',
@@ -31,10 +32,24 @@ export const categoriesApi = createApi({
 			  },
 			providesTags: (result) => ["Categories"],
 		}),
+		addToFavorites: builder.mutation({
+			query(category_id) {
+				return {
+                    url: WEPAPP_URI + FAVORITES,
+					method: 'POST',
+                    body: {
+                        user: (window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649'),
+                        categories: [category_id]
+                    }
+				};
+			  },
+			providesTags: (result) => ["Categories"],
+		}),
 	}),
 })
 
 export const {
 	useFetchCategoriesQuery,
-	useFetchOneCategoryQuery
+	useFetchOneCategoryQuery,
+	useAddToFavoritesMutation
 } = categoriesApi;

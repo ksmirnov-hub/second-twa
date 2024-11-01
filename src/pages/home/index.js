@@ -45,7 +45,8 @@ useEffect(() => {
 }, [isSuccess])
 
 const copyToClipBoard = () => {
-    navigator.clipboard.writeText('@Life_coinbot')
+    const user = window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649';
+    navigator.clipboard.writeText('https://t.me/Life_coinbot?start=' + user)
     .then(() => {
         var tooltip = document.getElementById("tooltip");
         tooltip.classList.remove('hidden'); 
@@ -92,7 +93,7 @@ const copyToClipBoard = () => {
                         <div>
                             <ShareIcon />
                         </div>
-                        <div className='name'>
+                        <div className='name invite'>
                             Пригласи друга
                         </div>
                         <div id="tooltip" className='tooltip hidden'>

@@ -30,6 +30,8 @@ import List from '../../images/category.png';
 import HomeActive from '../../images/home-active.png';
 import ArrowBack from '../../images/arrow-white.png';
 
+import { useAddToFavoritesMutation } from '../../store';
+
 const categoryImages = {
     'Повседневные': <Everyday />,
     'Утро': <Morning />,
@@ -59,7 +61,22 @@ const categoryImages = {
 const CurrentCategory = () => {
   const navigate = useNavigate();
   const { state = {} } = useLocation();
-  // const {isLoading, isError, data = []} = useFetchOneCategoryQuery(state?.category_id);
+  const [
+    addToFavorites,
+    {
+        isLoading,
+        isSuccess,
+        isError,
+        error,
+        reset
+    }
+  ] = useAddToFavoritesMutation(state?.category_id);
+
+  useEffect(() => {
+    if (isSuccess) {
+        navigate('/categories');
+    }
+  }, [isSuccess]);
 
   const CategoryIcon = ({name}) => (categoryImages[name] || <Everyday />);
 
@@ -98,7 +115,9 @@ const CurrentCategory = () => {
         </div>
         <div className='content-category-control'>
             <button
-                onClick={() => {navigate('/categories')}}
+                onClick={() => {
+                    addToFavorites(state?.category_id);
+                }}
             >
                 Сделать приоритетом
             </button>
