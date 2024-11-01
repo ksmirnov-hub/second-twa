@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 
 import './currentCategory.scss';
+import { Button } from '@chakra-ui/react';
 
 import Everyday from '../../images/categories/everyday';
 import Morning from '../../images/categories/morning';
@@ -101,26 +102,27 @@ const CurrentCategory = () => {
             </div>
         </div>
         <div className='content-category'>
+            <div className='content-category-inner'>
+                <div className='content-category-icon'>
+                    <CategoryIcon name={state?.name} />
+                </div>
+                <div className='content-category-name'>
+                    {state?.name}
+                </div>
+                <div className='content-category-description'>
+                    {state?.description}
+                </div>
+            </div>
+            <div className='content-category-control'>
+                <button
+                    onClick={() => {
+                        addToFavorites(state?.category_id);
+                    }}
+                >
+                <div>Сделать приоритетом</div>  
+                </button>
+            </div>
 
-            <div className='content-category-icon'>
-                <CategoryIcon name={state?.name} />
-            </div>
-            <div className='content-category-name'>
-                {state?.name}
-            </div>
-            <div className='content-category-description'>
-                {state?.description}
-            </div>
-
-        </div>
-        <div className='content-category-control'>
-            <button
-                onClick={() => {
-                    addToFavorites(state?.category_id);
-                }}
-            >
-               <div>Сделать приоритетом</div>  
-            </button>
         </div>
         <div className="down">
             <div>
