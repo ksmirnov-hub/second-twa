@@ -1,15 +1,15 @@
 import React from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import './tasks.scss';
-import Usd from '../../images/usd.png';
-import NoteActive from '../../images/note-active.png';
-import Category from '../../images/category.png';
+
 import ArrowBack from '../../images/arrow-white.png';
 import ArrowRight from '../../images/arrow-right.png';
-import Home from '../../images/home.png';
+
 import Coins from '../../images/coins.png';
 import Everyday from '../../images/categories/everyday.png';
 import { Spinner } from '@chakra-ui/react';
+
+import Basement from '../../components/basement';
 
 import { useGetTasksQuery } from '../../store';
 
@@ -85,30 +85,7 @@ const Tasks = () => {
                 }
 
             </div>
-            <div className="down">
-                <div>
-                    <img src={Usd} alt="" />
-                </div>
-                <div>
-                    <img src={NoteActive} alt="" />
-                </div>
-                <div>
-                    <button
-                        className='button-flat'
-                        onClick={() => {navigate('/categories')}}  
-                    >
-                      <img src={Category} alt="" />
-                    </button>
-                </div>
-                <div>
-                    <button
-                        className='button-flat'
-                        onClick={() => {navigate('/home')}}  
-                    >
-                        <img src={Home} alt="" />
-                    </button>
-                </div>
-            </div>
+            <Basement current='tasks' />
         </div>
     </div>
   );

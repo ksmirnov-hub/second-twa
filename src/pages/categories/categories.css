@@ -129,17 +129,6 @@
     left: 15px;
 }
 
-.down {
-    height: 90px;
-    display: flex;
-    position: fixed;
-    top: 89%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px;
-    background: rgba(249, 249, 249, 1);
-}
-
 .name {
     display: flex;
     align-items: center;

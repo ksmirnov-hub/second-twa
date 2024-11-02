@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation  } from 'react-router-dom';
 import './currentTask.scss';
-import Usd from '../../images/usd.png';
-import NoteActive from '../../images/note-active.png';
-import Category from '../../images/category.png';
+
 import ArrowBack from '../../images/arrow-white.png';
-import Home from '../../images/home.png';
+
 import Expand from '../../images/expand.png';
 import Collapse from '../../images/collapse.png';
 import EnterFirst from '../../images/enter-first.png';
@@ -24,6 +22,8 @@ import {
     useDisclosure,
     background
   } from '@chakra-ui/react';
+
+import Basement from '../../components/basement';
 
 import {
     useGetOneTaskQuery,
@@ -157,104 +157,83 @@ const Tasks = () => {
             </div>
         </div>
         <div className='current-task-content'>
-        {
-                isLoading ? (
-                    <>
-                        <div className='spinner'>
-                            <Spinner size='xl' />
-                        </div>
-                    </>
-                ) : (
+            <div className='current-task-content-inner'>
+                {
+                    isLoading ? (
                         <>
-                            <div className='current-task-title'>
-                                <div>
-                                    {data.name}
-                                </div>
-                                <div className='date'>
-                                    01.01.2024
-                                </div>
-                            </div>
-                            <div className='task-instructions'>
-                                <div className='howto'>
-                                    <div>Как делать:</div>
-                                    <div className={`innerText ${isHowToCollapsed ? 'collapsed' : ''}`}>
-                                        {data.description}
-                                    </div>
-                                    <div>
-                                        <button
-                                            onClick={() => setIsHowToCollapsed(!isHowToCollapsed)}
-                                        >
-                                            <div className='expand'>
-                                                <div>{isHowToCollapsed ? 'Читать подробнее' : 'Скрыть'}</div>
-                                                <div>
-                                                    <img src={isHowToCollapsed ? Expand : Collapse} alt="" />
-                                                </div>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className='howto'>
-                                    <div>Зачем делать:</div>
-                                    <div className={`innerText ${isWhatForCollapsed ? 'collapsed' : ''}`}>
-                                        {data.description2}
-                                    </div>
-                                    <div>
-                                        <button
-                                            onClick={() => setIsWhatForCollapsed(!isWhatForCollapsed)}
-                                        >
-                                            <div className='expand'>
-                                            <div>{isWhatForCollapsed ? 'Читать подробнее' : 'Скрыть'}</div>
-                                                <div>
-                                                    <img src={isWhatForCollapsed ? Expand : Collapse} alt="" />
-                                                </div>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div className='spinner'>
+                                <Spinner size='xl' />
                             </div>
                         </>
-                    )
+                    ) : (
+                            <div className='current-task-content-inner-upper'>
+                                <div className='current-task-title'>
+                                    <div>
+                                        {data.name}
+                                    </div>
+                                    <div className='date'>
+                                        01.01.2024
+                                    </div>
+                                </div>
+                                <div className='task-instructions'>
+                                    <div className='howto'>
+                                        <div>Как делать:</div>
+                                        <div className={`innerText ${isHowToCollapsed ? 'collapsed' : ''}`}>
+                                            {data.description}
+                                        </div>
+                                        <div>
+                                            <button
+                                                onClick={() => setIsHowToCollapsed(!isHowToCollapsed)}
+                                            >
+                                                <div className='expand'>
+                                                    <div>{isHowToCollapsed ? 'Читать подробнее' : 'Скрыть'}</div>
+                                                    <div>
+                                                        <img src={isHowToCollapsed ? Expand : Collapse} alt="" />
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className='howto'>
+                                        <div>Зачем делать:</div>
+                                        <div className={`innerText ${isWhatForCollapsed ? 'collapsed' : ''}`}>
+                                            {data.description2}
+                                        </div>
+                                        <div>
+                                            <button
+                                                onClick={() => setIsWhatForCollapsed(!isWhatForCollapsed)}
+                                            >
+                                                <div className='expand'>
+                                                <div>{isWhatForCollapsed ? 'Читать подробнее' : 'Скрыть'}</div>
+                                                    <div>
+                                                        <img src={isWhatForCollapsed ? Expand : Collapse} alt="" />
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
                 }
-            <div className='current-tasks-controls'>
-                <div>
-                    <button
-                        onClick={onOpen}
-                    >
-                        Выполнено
-                    </button>
-                </div>
-                <div>
-                    <button
-                        onClick={() => declineTask(state?.task_id)}
-                    >
-                        Отказаться
-                    </button>
-                </div>
-            </div>
-            <div className="down">
-                <div>
-                    <img src={Usd} alt="" />
-                </div>
-                <div>
-                    <img src={NoteActive} alt="" />
-                </div>
-                <div>
-                    <button
-                        className='button-flat'
-                        onClick={() => {navigate('/categories')}}  
-                    >
-                    <img src={Category} alt="" />
-                    </button>
-                </div>
-                <div>
-                    <button
-                        className='button-flat'
-                        onClick={() => {navigate('/home')}}  
-                    >
-                        <img src={Home} alt="" />
-                    </button>
+                <div className='current-tasks-controls'>
+                    <div>
+                        <button
+                            onClick={onOpen}
+                        >
+                            Выполнено
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            onClick={() => declineTask(state?.task_id)}
+                        >
+                            Отказаться
+                        </button>
+                    </div>
                 </div>
             </div>
+            <Basement />
         </div>
         <Modal
             isOpen={isOpen}

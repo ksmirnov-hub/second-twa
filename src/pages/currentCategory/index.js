@@ -25,11 +25,9 @@ import Ecolodgy from '../../images/categories/ecology';
 import Emotion from '../../images/categories/emotion';
 import Networking from '../../images/categories/networking';
 
-import Usd from '../../images/usd.png';
-import Location from '../../images/note.png';
-import List from '../../images/category.png';
-import HomeActive from '../../images/home-active.png';
 import ArrowBack from '../../images/arrow-white.png';
+
+import Basement from '../../components/basement';
 
 import { useAddToFavoritesMutation } from '../../store';
 
@@ -124,30 +122,7 @@ const CurrentCategory = () => {
             </div>
 
         </div>
-        <div className="down">
-            <div>
-                <img src={Usd} alt="" />
-            </div>
-            <div>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/tasks')}}  
-                >
-                    <img src={Location} alt="" />
-                </button>
-            </div>
-            <div>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/categories')}}  
-                >
-                    <img src={List} alt="" />
-                </button>
-            </div>
-            <div>
-                <img src={HomeActive} alt="" />
-            </div>
-        </div>
+        <Basement />
     </div>
   );
 };

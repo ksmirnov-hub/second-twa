@@ -5,10 +5,7 @@ import './home.css';
 
 import TelegramIcon from '../../images/tg.png';
 import LogoHome from '../../images/logo-home.png';
-import Usd from '../../images/usd.png';
-import Location from '../../images/note.png';
-import List from '../../images/category.png';
-import HomeActive from '../../images/home-active.png';
+
 import PremiumIcon from '../../images/premium';
 import ShareIcon from '../../images/share';
 import SupportIcon from '../../images/support';
@@ -17,6 +14,8 @@ import ArrowRightIcon from '../../images/arrow-right.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRegisterTapMutation } from '../../store';
 import { profileActions } from '../../store';
+
+import Basement from '../../components/basement';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -143,30 +142,7 @@ const copyToClipBoard = () => {
                 </div>
             </div>
         </div>
-        <div className="down">
-            <div>
-                <img src={Usd} alt="" />
-            </div>
-            <div>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/tasks')}}  
-                >
-                    <img src={Location} alt="" />
-                </button>
-            </div>
-            <div>
-                <button
-                    className='button-flat'
-                    onClick={() => {navigate('/categories')}}  
-                >
-                    <img src={List} alt="" />
-                </button>
-            </div>
-            <div>
-                <img src={HomeActive} alt="" />
-            </div>
-        </div>
+        <Basement current='home' />
     </div>
   );
 };

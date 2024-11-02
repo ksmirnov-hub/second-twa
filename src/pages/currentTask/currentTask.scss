@@ -1,6 +1,10 @@
 .current {
     width: 100%;
     background: rgba(249, 249, 249, 1);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -25,79 +29,90 @@
 .current-task-content {
     display: flex;
     flex-direction: column;
-    padding: 27px 18px 40px 18px;
+    padding: 27px 18px 0px 18px;
+    height: -webkit-fill-available;
 
-    & > .current-task-title {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-family: 'SF Pro Display';
-
-        & > div:nth-child(1) {
-            max-width: 232px;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 18px;
-            color: rgba(49, 55, 51, 1);
-        }
-        & > div:nth-child(2) {
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 14px;
-            color:rgba(137, 137, 137, 1);
-        }
-    }
-
-    .task-instructions {
+    & > .current-task-content-inner {
+        height: -webkit-fill-available;
         display: flex;
         flex-direction: column;
-        row-gap: 12px;
-        margin-top: 20px;
+        justify-content: space-between;
+        padding-bottom: 90px;
 
-        & > .howto {
-            padding: 12px;
-            background-color:rgba(254, 254, 254, 1);
-            font-family: 'SF Pro Display';
-
-            & > div:nth-child(1) {
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 18px;
-                color: rgba(49, 55, 51, 1);
-            }
-            & > .innerText {
-                font-size: 12px;
-                font-weight: 300;
-                margin-top: 8px;
-                transition: all 1s ease-out;
-
-                &.collapsed {
-                    white-space: nowrap;
-                    max-width: 300px;
-                    word-wrap: break-word;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
+        & > .current-task-content-inner-upper {
+            & > .current-task-title {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: 'SF Pro Display';
+        
+                & > div:nth-child(1) {
+                    max-width: 232px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 18px;
+                    color: rgba(49, 55, 51, 1);
+                }
+                & > div:nth-child(2) {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                    color:rgba(137, 137, 137, 1);
                 }
             }
-            & > div:nth-child(3) {
+        
+            .task-instructions {
                 display: flex;
-                justify-content: end;
-                background-color:rgba(254, 254, 254, 1);
-                border: none;
-                & > button{
-                    border: none;
+                flex-direction: column;
+                row-gap: 12px;
+                margin-top: 20px;
+        
+                & > .howto {
+                    padding: 12px;
                     background-color:rgba(254, 254, 254, 1);
-                    & > .expand {
-                        align-items: center;
-                        background-color:rgba(254, 254, 254, 1);
-                        display: flex;
-                        column-gap: 4px;
-                        font-size: 12px;
-                        margin-top: 12px;
-                        color: rgba(137, 137, 137, 1);
+                    font-family: 'SF Pro Display';
+        
+                    & > div:nth-child(1) {
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 18px;
+                        color: rgba(49, 55, 51, 1);
                     }
-
+                    & > .innerText {
+                        font-size: 12px;
+                        font-weight: 300;
+                        margin-top: 8px;
+                        transition: all 1s ease-out;
+        
+                        &.collapsed {
+                            white-space: nowrap;
+                            max-width: 300px;
+                            word-wrap: break-word;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+                    & > div:nth-child(3) {
+                        display: flex;
+                        justify-content: end;
+                        background-color:rgba(254, 254, 254, 1);
+                        border: none;
+                        & > button{
+                            border: none;
+                            background-color:rgba(254, 254, 254, 1);
+                            & > .expand {
+                                align-items: center;
+                                background-color:rgba(254, 254, 254, 1);
+                                display: flex;
+                                column-gap: 4px;
+                                font-size: 12px;
+                                margin-top: 12px;
+                                color: rgba(137, 137, 137, 1);
+                            }
+        
+                        }
+                    }
                 }
             }
         }
@@ -106,7 +121,6 @@
 .current-tasks-controls {
     display: flex;
     justify-content: space-between;
-    margin-top: 276px;
     column-gap: 12px;
 
     & > div > button {
