@@ -17,7 +17,7 @@ const Home = () => {
       animate={{
         background: 'radial-gradient(70.56% 70.56% at 50% 38.03%, #40E48F 0%, #00B858 100%)'
       }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.3 }}
     >
        <div className="center-block">
         <motion.div
