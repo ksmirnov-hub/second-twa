@@ -66,14 +66,14 @@ const copyToClipBoard = () => {
         <div className='content'>
 
             <div className='links'>
-                <div className="block">
+                <div className="block" style={{display: 'none'}}>
                     <div className="row">
                         <img src={TelegramIcon} alt="" />
                         <div className='name'>Телеграм</div>
                     </div>
                     <div className='subscribe'>Подписаться</div>
                 </div>
-                <div className="block">
+                <div className="block" style={{display: 'none'}}>
                     <div className="row">
                         <div>
                             <PremiumIcon />
@@ -84,11 +84,10 @@ const copyToClipBoard = () => {
                     </div>
                     <div className='subscribe'>В ожидании</div>
                 </div>
-                <div className="block">
-                    <div
-                     className="row relative"
+                <div className="block" 
                      onClick={() => copyToClipBoard()}
-                    >
+                >
+                    <div className="row relative">
                         <div>
                             <ShareIcon />
                         </div>
@@ -103,7 +102,7 @@ const copyToClipBoard = () => {
                         <img src={ArrowRightIcon} alt="" />
                     </div>
                 </div>
-                <div className="block">
+                <div className="block" style={{display: 'none'}}>
                     <div
                         className="row"
                     >
