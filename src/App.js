@@ -25,7 +25,7 @@ const App = () => {
     if (profile.id) {
       setTimeout(() => {
         setStartPage(isNewUser ? <Start /> : <Home />)
-      }, 3000)
+      }, 30000000)
     }
   }, [profile])
 
