@@ -91,17 +91,18 @@
         text-align: left;
         color: rgba(49, 55, 51, 1);
     }
-    & > .total-scores,
-    & > .balance-scores {
-        flex-direction: row;
-        display: flex !important;
-        column-gap: 4px;
-        & > .balance {
-            min-width: 20px;
-        }
-    }
+
 }
 
+.total-scores,
+.balance-scores {
+    flex-direction: row;
+    display: flex !important;
+    column-gap: 4px;
+    & > .balance {
+        min-width: 20px;
+    }
+}
 
 .block.no-border {
     border: none;
