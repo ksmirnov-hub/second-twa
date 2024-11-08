@@ -7,6 +7,10 @@
     left: 15px;
 }
 
+.down-control {
+    display: flex;
+}
+
 .down {
     height: 90px;
     display: flex;
