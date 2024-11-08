@@ -29,7 +29,7 @@
 .current-task-content {
     display: flex;
     flex-direction: column;
-    padding: 27px 18px 0px 18px;
+    padding: 27px 0px 0px 0px;
     height: -webkit-fill-available;
 
     & > .current-task-content-inner {
@@ -38,6 +38,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding-bottom: 90px;
+        margin: 0 18px;
 
         & > .current-task-content-inner-upper {
             & > .current-task-title {
