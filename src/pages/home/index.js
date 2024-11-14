@@ -36,7 +36,7 @@ const Home = () => {
 ] = useRegisterTapMutation();
 
 useEffect(() => {
-    registerTap();
+    // registerTap();
 }, [])
 
 useEffect(() => {
