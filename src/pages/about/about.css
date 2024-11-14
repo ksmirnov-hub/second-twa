@@ -1,0 +1,69 @@
+
+.start {
+    padding: 218px 18px 97px 18px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 28px;
+    height: 100%;
+    background: radial-gradient(70.56% 70.56% at 50% 38.03%, #40E48F 0%, #00B858 100%);
+    height: max-content;
+  }
+  
+  .about-content {
+    padding: 18px 18px 20px 20px;
+    font-family: 'SF Pro Display';
+    font-size: 14px;
+    font-weight: 500;
+  
+    & > .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .controls {
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  
+    & > button {
+      text-align: center;
+      width: 100%;
+      margin: 18px 18px;
+      height: 50px;
+      padding: 16px 10px 16px 10px;
+      gap: 10px;
+      border-radius: 8px;
+      background: rgba(222, 255, 236, 1);
+      border: none;
+      cursor:pointer;
+      font-family: 'SF Pro Display';
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 18px;
+    }
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }

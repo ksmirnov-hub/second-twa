@@ -11,6 +11,8 @@ import ShareIcon from '../../images/share';
 import SupportIcon from '../../images/support';
 import ArrowRightIcon from '../../images/arrow-right.png';
 
+import DescriptionIcon from '../../images/description';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { useRegisterTapMutation } from '../../store';
 import { profileActions } from '../../store';
@@ -111,6 +113,25 @@ const copyToClipBoard = () => {
                         </div>
                         <div className='name'>
                             Техподдержка
+                        </div>
+                    </div>
+                    <div className='subscribe'>
+                        <img src={ArrowRightIcon} alt="" />
+                    </div>
+                </div>
+                <div className="block"
+                     onClick={() => {
+                        navigate('/about')
+                     }}
+                >
+                    <div
+                        className="row"
+                    >
+                        <div>
+                            <DescriptionIcon />
+                        </div>
+                        <div className='name'>
+                            Зачем тебе Life Coin?
                         </div>
                     </div>
                     <div className='subscribe'>
