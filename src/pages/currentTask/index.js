@@ -98,10 +98,12 @@ const Tasks = () => {
   }
 
   useEffect(() => {
-    if (isOpen) {
-        setSkip(false)
+    if (isOpen && !isCompletionLoading && !isError && !isSuccess) {
+        setSkip(false);
+    } else {
+        setSkip(true);
     }
-  }, [isOpen])
+  }, [isOpen, isCompletionLoading, isSuccess, isError])
 
   useEffect(() => {
     if (isDeclineSuccess) {
@@ -111,13 +113,13 @@ const Tasks = () => {
 
   useEffect(() => {
     if (isSuccess) {
-        navigate('/tasks');
         onClose();
+        navigate('/tasks');
     }
   }, [isSuccess])
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess && review.length) {
         resetSendingReview();
         reviewTask({
             taskId: state?.task_id,
@@ -132,8 +134,9 @@ const Tasks = () => {
         setIsCompleteError(true);
         setTimeout(() => {
             setIsCompleteError(false);
-            reset()
+            reset();
             onClose();
+            navigate('/tasks');
         }, 1500);
     }
   }, [isError])
@@ -356,15 +359,12 @@ const Tasks = () => {
 
                 <ModalFooter>
                     <Button
-                        isDisabled={!review.length}
+                        isDisabled={isCompletionLoading}
                         bg='rgba(0, 184, 88, 1)'
                         mr={3}
                         w='100%'
                         color='white'
                         onClick={() => {
-                            if (!review.length) {
-                                return false;
-                            }
                             completeTask(state?.task_id);
                         }}
                     >
