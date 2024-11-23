@@ -12,6 +12,7 @@ import Tasks from './pages/tasks';
 import CurrentTask from './pages/currentTask';
 import CurrentCategory from './pages/currentCategory';
 import About from './pages/about';
+import StockPiles from './pages/stockpiles';
 
 import { useState, useEffect } from 'react';
 import { profileActions } from '../src/store';
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="start" element={<Start />} />
         <Route path="hello" element={<Hello />} />
+        <Route path="stockpiles" element={<StockPiles />} />
         <Route path='task' element={<CurrentTask />} />
         <Route path='category' element={<CurrentCategory />} />
         <Route path="categories" element={<Categories />} />

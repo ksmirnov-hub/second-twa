@@ -4,6 +4,7 @@ import { useNavigate  } from 'react-router-dom';
 import './basement.css';
 
 import Usd from '../../images/controls/usd';
+import UsdActiveIcon from '../../images/controls/usd-active';
 import Note from '../../images/controls/note';
 import NoteActiveIcon from '../../images/controls/note-active';
 import List from '../../images/controls/list';
@@ -19,14 +20,16 @@ const Basement = ({
   return (
     <div className="down">
         <div className='down-control'>
-            <button
-                className='button-flat'
-                onClick={() => {
-                    return false;
-                }}  
-            >
-                <Usd unactive={true} />
-            </button>
+        {
+                current === 'stockpiles' ? <UsdActiveIcon /> : (
+                    <button
+                        className='button-flat'
+                        onClick={() => {navigate('/stockpiles')}}  
+                    >
+                        <Usd />
+                    </button>
+                )
+            }
         </div>
         <div className='down-control'>
             {
