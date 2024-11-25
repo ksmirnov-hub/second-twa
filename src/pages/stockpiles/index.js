@@ -38,10 +38,6 @@ const StockPiles = () => {
 ] = useRegisterTapMutation();
 
 useEffect(() => {
-    // registerTap();
-}, [])
-
-useEffect(() => {
     if (isSuccess) {
         dispatch(profileActions.getProfile());
     }
@@ -64,7 +60,7 @@ useEffect(() => {
                 <div className='title'>Накопления</div>
             </div>
         </div>
-        <div className='content'>
+        <div className='stockpiles-content'>
             <div>
                 <StockPilesIcon />
             </div>
