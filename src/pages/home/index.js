@@ -47,7 +47,7 @@ useEffect(() => {
 
 const copyToClipBoard = () => {
     const user = window.Telegram?.WebApp?.initDataUnsafe?.user?.id || '316601649';
-    navigator.clipboard.writeText('https://t.me/Life_coinbot?startapp=' + user)
+    navigator.clipboard.writeText('https://t.me/Life_coinbot/Life_coinbot?startapp=' + user)
     .then(() => {
         var tooltip = document.getElementById("tooltip");
         tooltip.classList.remove('hidden'); 
