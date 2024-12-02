@@ -29,8 +29,7 @@ function createExtraActions() {
     };
 
     function getProfile() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const start = urlParams.get('start');
+        const start = window.Telegram.WebApp.initDataUnsafe.start_param;
         const hash = window.location.hash.slice(1);
         console.log(hash);
 
